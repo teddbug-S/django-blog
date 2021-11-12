@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: -2rem;
+    /* width: 100%; */
+    height: 50rem;
+    /* background: cornflowerblue; */
+}
+
+.info-body p {
+    margin-top: 1rem;
+    font-family: Titillium;
+    font-size: 1.2rem;
+}
+
+.info-body p a:nth-child(1) {
+    color: #bdbd07;
+}
+
+.info-body p a:nth-child(2) {
+    color: #2d942d;
+}
+
+.info-body p a:nth-child(3) {
+    color: #22328b;
+}
+
+.info-body p a:nth-child(4) {
+    color: #c5132b;
+}
+
+.info-body p:nth-child(3) a {
+    color: #313131;
+}
+
+
+.info-body a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-body {
+    width: 60%;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    padding: 1.2rem;
+    margin-top: 3rem;
+    /* flex: 1; */
+}
+
+
+.my-brand2 {
+    margin-left: 1.2rem;
+    margin-top: 3rem;
+    padding: 1rem;
+    height: 26rem;
+    width: 24rem;
+}
+
+.my-brand2 img {
+    width: 18rem;
+    filter: drop-shadow(0px 8px 12px #7c7c7c);
+    height: 17rem;
+}
+
+.my-brand2 p {
+    position: relative;
+    top: 1.4rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    left: 2rem;
+    font-family: VarelaRound;
+}
+
+.my-brand2 a span {
+    color: #2d942d;
+    font-family: SecularOne;
+}
+
+.my-brand2 a {
+    text-decoration: none;
+    color: #7c7c7c;
+    transition: all .4s ease;
+}
+
+.my-brand2 a:hover {
+    color: black;
+}
+
+.rounded-circle {
+    width: 6rem;
+    height: 6rem;
+    z-index: 1;
+    filter: drop-shadow(2px 2px 6px #5f5e5e);
+    position: relative;
+    top: -15rem;
+    left: -3.5rem;
+}
+
+.screenshot {
+    z-index: -1;
+    filter: drop-shadow(2px 2px 6px #5f5e5e);
+    position: relative;
+    width: 40rem;
+    top: -8rem;
+    left: -10rem;
+    margin-left: 1.8rem;
+    border-radius: 1rem;
+}
+
+.image-content {
+    margin-bottom: 3rem;
+}
+
+.footer-text {
+    font-weight: 300;
+    text-align: center;
+    color: #5f5e5e;
+}
+
+.foot-img {
+    position: relative;
+    left: 30rem;
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 6rem;
+    width: 20rem;
+}
+
+.foot-img p:hover {
+    color: #3b3b3b;
+}
+
+.foot-img p {
+    margin-top: 0.8rem;
+    color: #5f5e5e;
+    cursor: pointer;
+    margin-left: 1.6rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-family: VarelaRound;
+    transition: all .4s ease;
+}
+
+.foot-img img {
+    width: 8rem;
+    height: 5.5rem;
+    cursor: pointer;
+}
+

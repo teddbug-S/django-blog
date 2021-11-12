@@ -1,0 +1,105 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<!-- Link css -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'users/css/profile-style.css' %}">
+{% endblock head %}
+
+<!-- Main content -->
+{% block content %}
+    <div class="container">
+        <div class="profile-container">
+            <div class="card">
+                <div>
+                    <img class="rounded-circle" src="{{user_.profile.display_picture.url}}" alt="profile picture">
+                    <!-- <img class="add-new"
+                     src="{% static 'blog/images/add-new.svg' %}" alt="add new"> -->
+                </div>
+                <div class="username">
+                    <img class="address" src="{% static 'blog/images/address.svg' %}" alt="">
+                    <span class="display-4 text-center">{{user_.username}}</span>
+                </div>
+                <p class="email">{{user_.email}}</p>
+                <div class="row">
+                    <div class="col p-3">
+                    {% if user_.profile.bio %}
+                        <p>
+                            {{user_.profile.wrapped_bio}}
+                        </p>
+                    {% else %}
+                        <span class="text-center display-6">No Bio</span>
+                        {% if user_.username == user.username %}
+                            <p id="no-bio">Please update bio.</p>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                    <div class="col p-3">
+                        <p class="text-muted">Joined in {{user_.date_joined|date:"F j, Y."}}</p>
+                        <div class="posts-count">
+                            <p style="color: #5a5a5a;">Made {{user_.profile.posts_count}} post{{user_.profile.posts_count|pluralize}}.</p>
+                            {% if user_.profile.posts_count < 12 %}
+                            <p class="level-pill-1 level-pill">starter🤰</p>
+                            {% elif 12 < user_.profile.posts_count < 25 %}
+                            <p class="level-pill-2 level-pill">nosetalgia 👣</p>
+                            {% elif 25 < user_.profile.posts_count < 50 %}
+                            <p class="level-pill-3 level-pill">subking 🤴</p>
+                            {% elif 50 < user_.profile.posts_count < 75 %}
+                            <p class="level-pill-4 level-pill">king 👑</p>
+                            {% elif 75 < user_.profile.posts_count < 100 %}
+                            <p class="level-pill-5 level-pill">legend 💪</p>
+                            {% endif %}
+                            <p>•</p>
+                            <a href="{% url 'user-posts' user_.username %}" class="posts-link">Posts</a>
+                        </div>
+                        <div class="tags">
+                            <span class="badge rounded-pill bg-primary pill">blogging</span>
+                            <span class="badge rounded-pill bg-primary pill">gaming</span>
+                            <span class="badge rounded-pill bg-primary pill">coding</span>
+                        </div>
+                        {% if user_.profile.linked_accounts.accounts %}
+                            <div class="connected">
+                                <!-- For Github -->
+                                {% if user_.profile.linked_accounts.github %}
+                                    <a  target="_blank" href="{{user.profile.linked_accounts.github}}">
+                                        <img src="{% static 'users/images/github.svg' %}" alt="">
+                                    </a>
+                                {% endif %}
+                                <!-- For Youtube -->
+                                {% if user_.profile.linked_accounts.youtube %}
+                                    <a  target="_blank" href="{{user.profile.linked_accounts.youtube}}">
+                                        <img src="{% static 'users/images/youtube.svg' %}" alt="">
+                                    </a>
+                                {% endif %}
+                                <!-- For Facebook -->
+                                {% if user_.profile.linked_accounts.facebook %}
+                                    <a target="_blank" href="{{user.profile.linked_accounts.facebook}}">
+                                        <img src="{% static 'users/images/facebook.svg' %}" alt="">
+                                    </a>
+                                {% endif %}
+                                <!-- For instagram -->
+                                {% if user_.profile.linked_accounts.instagram %}
+                                    <a target="_blank" href="{{user.profile.linked_accounts.instagram}}">
+                                        <img src="{% static 'users/images/instagram.svg' %}" alt="">
+                                    </a>
+                                {% endif %}
+                                <!-- For Twitter -->
+                                {% if user_.profile.linked_accounts.twitter %}
+                                    <a target="_blank" href="{{user.profile.linked_accounts.twitter}}">
+                                        <img src="{% static 'users/images/twitter.svg' %}" alt="">
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            {% if user.username == user_.username %}
+                                <p class=" no-accounts text-muted mt-3">No account links</p>
+                                <small class="text-muted">use your profile links to add accounts</small><br>
+                                <small class="text-muted">e.g https://github.com/teddbug-S</small>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

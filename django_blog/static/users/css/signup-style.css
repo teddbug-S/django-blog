@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.register-container {
+    margin: 2rem auto;
+}
+
+.register-container img {
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    position: relative;
+    left: 29rem;
+}
+
+
+.form-container {
+    width: 36%;
+    margin: auto;
+}
+
+.register-container form button.register-btn {
+    margin: 1rem 0rem;
+    border: none;
+    font-size: 1rem;
+    height: 2.9rem;
+    font-family: VarelaRound;
+    width: 8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.already-user-link:hover {
+    color: #54585ce0;
+}
+
+.login-link {
+    transition: .5s all ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 0.8rem;
+    color: #119e0ce0;
+}

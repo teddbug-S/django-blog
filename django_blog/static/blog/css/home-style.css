@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "VarelaRound";
+    src: url("../fonts/VarelaRound-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SecularOne";
+    src: url("../fonts/SecularOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Titillium";
+    src: url("../fonts/TitilliumWeb-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.card-content {
+    padding: .3rem 0rem 0rem 0rem;
+    /* height: 26rem; */
+}
+
+.author-container img {
+    width: 5rem;
+    margin: 1.4rem;
+    filter: drop-shadow(0.6px 0.6px 1.4px #5f5e5e);
+    height: 5rem;
+}
+
+.author-container .author:hover {
+    color: #0ca0a0;
+}
+
+.posts-container .card div.card-content {
+    /* padding: 0.3rem; */
+    width: 80%;
+    position: relative;
+    left: 4rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.card-title {
+    text-decoration: none;
+    margin-top: .6rem;
+    color: #2d942d;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+.author-container span, .author-container .author {
+    text-decoration: none;
+    font-family: VarelaRound;
+    font-weight: 480;
+    font-size: 1.2rem;
+    transition: all .3s ease;
+    position: relative;
+    bottom: .4rem;
+    color: #0f3179;
+}
+
+.author-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.posts-container .card-img-top {
+    height: 10rem;
+    align-self: flex-start;
+}
+
+.card-body {
+    font-family: Titillium;
+}
+
+.posts-container {
+    margin: auto;
+    width: 65%;
+}
+
+.card-footer {
+    margin-bottom: 0;
+}

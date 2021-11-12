@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<!-- Extends base to add some stylesheet links -->
+{% block head%}
+<link rel="stylesheet" href="{% static 'users/css/logout-style.css' %}">
+{% endblock head%}
+
+<!-- Main content -->
+{% block content %}
+    <div class="container">
+        <div class="logout-container">
+            <span class="display-3">You've logged out.</span>
+            <p><a href="{% url 'users-login' %}">Log in again.</a></p>
+            <div class="img-container">
+                <img src="{% static 'users/images/outer-space.svg'%}" alt="space image">
+            </div>
+        </div>
+    </div>
+{% endblock content %}

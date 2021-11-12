@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!-- Extending the head links -->
+{% block head%}
+<link rel="stylesheet" href="{% static 'users/css/login-style.css' %}">
+{% endblock head%}
+
+<!-- Main Content -->
+{% block content %}
+    <div class="container">
+        <!-- Sign in container -->
+        <div class="login-container">
+            <header>
+                <h1 class="display-5 text-center">Login</h1>
+                <img src="{% static 'users/images/login.svg' %}" alt="login user">
+            </header>
+            {% if form.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong>Incorrect password or username.</strong>
+                    Please enter a correct username and password.
+                </div>
+            {% endif%}
+            <div class="form-div">
+                <form method="post" action="{% url 'users-login' %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary login-btn">Login</button>
+                    <a href="{% url 'password_reset' %}" class="forgot-link">Forgot Password?</a>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+                <div>
+                    <small class="text-muted">New here?</small>
+                    <a class="register-link" href="{% url 'users-register' %}">Register for an account.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

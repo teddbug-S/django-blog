@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: OverpassMono;
+    src: url("../fonts/OverpassMono-Regular.ttf");
+}
+
+.profile-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.display-4 {
+    text-align: center;
+    margin-right: 3rem;
+    font-size: 1.7rem;
+}
+
+.email {
+    color: #5f5e5e;
+    position: relative;
+    top: -1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.address {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    position: relative;
+    margin-top: 1rem;
+    /* left: -9rem; */
+    top: -0.8rem;
+}
+
+.add-new {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    left: -3.4rem;
+    bottom: -3.4rem;
+    filter: drop-shadow(0.6px 0.6px 0.8px #5f5e5e);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.rounded-circle {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 0.7rem;
+    z-index: 0;
+}
+
+.card {
+    padding: 0.7rem;
+    width: 60rem;
+    margin-top: 3.6rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    border-radius: 1.5rem;
+    justify-content: space-evenly;
+    border-color: #cacaca;
+}
+
+.row .col:nth-child(2) p {
+    margin-left: 1rem;
+}
+
+.row .col:nth-child(1) p {
+    color: #4b4b4b;
+    font-family: Titillium;
+    padding-right: 1rem;
+    font-size: 1.1rem;
+}
+
+.display-6 {
+    margin-left: 4rem;
+    color: #5a5a5a;
+}
+
+#no-bio {
+    color: #b3b3b3;
+    font-family: VarelaRound;
+    text-align: center;
+    margin-left: -8rem;
+    margin-top: 1rem;
+}
+
+.posts-count {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 20rem;
+}
+
+.posts-count p {
+    margin-top: 0.6rem;
+}
+
+.posts-link:hover {
+    color: #565656;
+}
+
+.posts-link {
+    text-decoration: none;
+    font-family: VarelaRound;
+    transition: all .5s ease;
+    color: #848282;
+    font-weight: 600;
+    margin-left: 0.8rem;
+}
+
+.level-pill-1 {
+    color: #5e5e5e;
+    background: #9bebff;
+}
+
+.level-pill-2 {
+    color: #4d4dd4;
+    background: #93fd8a;
+}
+
+.level-pill-3 {
+    color: #585858;
+    background: #f5ff70;
+}
+
+.level-pill-4 {
+    color: #353535;
+    background: #ffd000e5;
+}
+
+.level-pill-5 {
+    color: #ff6924;
+    background: #6a74ff;
+}
+
+.level-pill {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    font-family: VarelaRound;
+    border: none;
+    padding: 4px 8px;
+}
+
+.text-muted {
+    font-family: VarelaRound;
+}
+
+.row {
+    width: 56rem;
+}
+
+.tags, .connected {
+    margin: 0.4rem 0rem;
+    padding: 0.5rem;
+    max-height: 3rem;
+}
+
+.pill {
+    font-size: 1rem;
+    font-family: VarelaRound;
+    font-weight: 100;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.connected img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0rem 0.5rem;
+}
+
+.connected {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+small.text-muted {
+    margin-left: 1rem;
+}
+
+
+.tags span.pill:hover {
+    color: #ddff00;
+}
+
+.btn {
+    background-color: #2d942d;
+    color: #5f5e5e;
+    transition: all .4s ease;
+    position: relative;
+    bottom: -19rem;
+    left: -9rem;
+}
+
+.btn:hover {
+    background-color: #1e691e;
+    color: #d8d7d7;
+}
+

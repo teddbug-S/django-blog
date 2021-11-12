@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    justify-content: center;
+}
+
+.data-container {
+    margin: 1rem auto;
+    width: 65%;
+}
+
+#div_id_bio {
+    margin-top: 1.2rem;
+}
+
+#div_id_display_picture {
+    margin-top: 1.2rem;
+}
+
+#div_id_facebook {
+    margin-top: 1.2rem;
+}
+
+.d-grid {
+    margin: 3rem auto;
+}

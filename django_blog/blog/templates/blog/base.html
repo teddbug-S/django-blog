@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+        <title>Django Blog - {{title}} </title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
+    <link href="{% static 'blog/bootstrap-css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/bootstrap-css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/base.css' %}">
+    <link rel="icon" href="{% static 'blog/images/django.svg' %}">
+    <script src="{% static 'blog/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="container">
+                <div class="my-brand">
+                    <img src="{% static 'blog/images/django.svg'%}" alt="">
+                    <a href="{% url 'blog-index' %}"><span>Django</span> Blog</a>
+                </div>
+                <!-- Primary Navbar -->
+                <ul class="primary-nav">
+                    <li><a href="{% url 'blog-home' %}?page=1">Home</a></li>
+                    <li><a href="{% url 'blog-index' %}">About</a></li>
+                </ul>
+                <!-- Aside Navbar -->
+                {% if not user.is_authenticated %}
+                    <ul class="aside-nav">
+                        <li><a href="{% url 'users-login' %}">Login</a></li>
+                        <li><a class="register-link" href="{% url 'users-register' %}">Register</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="aside-nav2">
+                        <li><a href="{% url 'users-profile' user.username %}">My Profile</a></li>
+                        <li><a href="{% url 'users-profile-update' %}">Edit Profile</a></li>
+                        <li><a href="{% url 'users-logout' %}">Logout</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{message.tags}} alert-dismissible fade show">
+                    {% if message.tags == 'success'%}
+                        <img width="28rem" height="28rem" src="{% static 'users/images/approve.svg' %}" alt="approve">
+                    {% elif message.tags == 'info' %}
+                        <img width="28rem" height="28rem" src="{% static 'users/images/info-sign.svg' %}" alt="idea">
+                    {% endif %}
+                        {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

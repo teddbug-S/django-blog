@@ -1,0 +1,94 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<!-- Add some css link  -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'blog/css/home-style.css' %}">
+{% endblock head %}
+
+<!-- Main content -->
+{% block content %}
+    <div class="container">
+        {% block title %}
+            <span class="display-4">Posts</span>
+        {% endblock title %}
+        <div class="posts-container mt-4">
+            {% if page_obj.object_list %}
+                {% for post in page_obj %}
+                    <div class="card mt-2">
+                        <!-- <img class="card-img-top" src="{% static 'blog/images/home.png' %}" alt="django image"> -->
+                        <div class="author-container">
+                            <img src="{{post.author.profile.display_picture.url}}" alt="profile picture" class="display-pic rounded-circle">
+                            <div class="user-names">
+                                <span class="full-name">{{post.author.profile.full_name|title}}</span>
+                                <a href="{% url 'users-profile' post.author.username %}" class="author">{{post.author}}</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <a href="{% url 'blog-post' post.id %}" class="card-title display-6">{{post.title|title}}</a>
+                            <div class="card-body">
+                                <p class="content">{{post.content}}</p>
+                            </div>
+                        </div>
+                        <p class="card-footer text-muted">Posted {{post.date_posted|timesince}} ago.</p>
+                    </div>
+                {% endfor %}
+                {% if is_paginated %}
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a href="?page=1" class="page-link mb-4">First</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="?page={{page_obj.previous_page_number}}" class="page-link mb-4">Previous</a>
+                            </li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li class="page-item active">
+                                    <a href="?page={{ num }}" class="page-link mb-4">{{ num }}</a>
+                                </li>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item">
+                                <a href="?page={{ num }}" class="page-link mb-4">{{ num }}</a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a href="?page={{ page_obj.next_page_number }}" class="page-link mb-4">Next</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link mb-4">Last</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            <!-- If used to display a single post -->
+            {% elif post %}
+                <div class="card mt-2">
+                    <!-- <img class="card-img-top" src="{% static 'blog/images/home.png' %}" alt="django image"> -->
+                    <div class="author-container">
+                        <img src="{{post.author.profile.display_picture.url}}" alt="profile picture" class="display-pic rounded-circle">
+                        <div class="user-names">
+                            <span class="full-name">{{post.author.profile.full_name|title}}</span>
+                            <a href="{% url 'users-profile' post.author.username %}" class="author">{{post.author}}</a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'blog-post' post.id %}" class="card-title display-6">{{post.title|title}}</a>
+                        <div class="card-body">
+                            <p class="content">{{post.content}}</p>
+                        </div>
+                    </div>
+                    <p class="card-footer text-muted">Posted {{post.date_posted|timesince}} ago.</p>
+                </div>
+            
+            {% else %}
+                <div class="display-3">No Posts</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

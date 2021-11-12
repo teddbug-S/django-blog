@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.display-3 {
+    margin-top: 2rem;
+    background: linear-gradient(to right bottom, #ff058fe0,  #4b0face0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* display: flexbox; */
+}
+
+.logout-container {
+    align-items: center;
+    justify-content: flex-start;
+    display: flexbox;
+}
+
+.logout-container a {
+    text-decoration: none;
+    font-weight: 500;
+    font-family: VarelaRound;
+    color: #4b0face0;
+    font-size: 1.2rem;
+    transition: all .3s ease;
+}
+
+.logout-container a:hover {
+    color: cadetblue;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-container img {
+    width: 38rem;
+    height: 30rem;
+    display: flex;
+    align-self: center;
+}
+

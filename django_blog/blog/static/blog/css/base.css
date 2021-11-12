@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "VarelaRound";
+    src: url("../fonts/VarelaRound-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SecularOne";
+    src: url("../fonts/SecularOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Titillium";
+    src: url("../fonts/TitilliumWeb-Regular.ttf");
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* .alert {
+    width: 40rem;
+} */
+
+.navbar .container {
+    display: flex;
+    margin-top: 1rem;
+    align-items: baseline;
+    width: 100%;
+    justify-content: baseline;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.navbar {
+    /* background: #4b06b9e0; */
+    margin: auto;
+}
+
+
+
+.navbar .my-brand {
+    font-size: 1.3rem;
+    display: inline;
+}
+
+.navbar .my-brand img {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+.navbar .my-brand a {
+    font-weight: 550;
+}
+
+.my-brand a span {
+    color: #2d942d;
+    font-family: SecularOne;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #7c7c7c;
+    /* color: #e2e2e2; */
+    transition: all .3s ease;
+    font-family: VarelaRound;
+}
+
+.navbar a:hover {
+    color: black;
+}
+
+.navbar ul {
+    list-style: none;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.navbar .primary-nav {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.primary-nav li:nth-child(2) {
+    margin-left: 1.8rem;
+}
+
+.aside-nav li:nth-child(2) {
+    margin-left: 1.8rem;
+}
+
+.aside-nav2 li:nth-child(1) {
+    margin-right: 1.8rem;
+}
+
+.aside-nav2 li:nth-child(2) {
+    margin-right: 1.8rem;
+}
+
+.navbar .aside-nav {
+    display: inline-flex;
+    align-items: flex-end;
+    flex: 1;
+    margin-right: 4rem;
+    font-weight: 500;
+    justify-content: flex-end;
+}
+
+.navbar .aside-nav2 {
+    display: inline-flex;
+    align-items: flex-end;
+    flex: 1;
+    margin-right: 4rem;
+    /* font-weight: 500; */
+    justify-content: flex-end;
+}
+
+.aside-nav li .register-link {
+    padding: 1rem 1.4rem;
+    border-radius: 1.8rem;
+    background: #4b06b9e0;
+    color: white;
+    font-weight: 500;
+    transition: .3s all ease;
+}
+
+.aside-nav li .register-link:hover {
+    color: #4b06b9e0;
+    background: #ffffff;
+}
